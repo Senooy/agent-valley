@@ -1,0 +1,10 @@
+{
+  "Name": "Agent Valley",
+  "Author": "Younes",
+  "Version": "0.2.0",
+  "Description": "Place Claude Code and Codex agents on your farm and chat with them right from the game.",
+  "UniqueID": "Younes.AgentValley",
+  "EntryDll": "AgentValley.dll",
+  "MinimumApiVersion": "4.0.0",
+  "UpdateKeys": []
+}

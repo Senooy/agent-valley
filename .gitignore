@@ -1,0 +1,19 @@
+# Build
+bin/
+obj/
+*.log
+
+# IDE
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Local mod data (agents, transcripts)
+AgentValley/data/
+AgentValley/config.json
+
+# Misc
+.DS_Store
+Thumbs.db

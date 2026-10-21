@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>AgentValley</AssemblyName>
+    <RootNamespace>AgentValley</RootNamespace>
+    <Version>0.2.0</Version>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <EnableHarmony>false</EnableHarmony>
+  </PropertyGroup>
+
+  <!-- ModBuildConfig finds the game by itself on most installs (Steam/GOG, Windows/macOS).
+       Custom Steam library: set it explicitly when it exists. -->
+  <PropertyGroup Condition="'$(GamePath)' == '' And Exists('D:\SteamLibrary\steamapps\common\Stardew Valley')">
+    <GamePath>D:\SteamLibrary\steamapps\common\Stardew Valley</GamePath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.4.0" />
+  </ItemGroup>
+
+</Project>
