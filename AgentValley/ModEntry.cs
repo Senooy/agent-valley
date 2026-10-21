@@ -42,6 +42,7 @@ public sealed class ModEntry : Mod
         Manager.TurnFinishedBackground += OnTurnFinishedBackground;
         Placement = new Placement(helper);
 
+        helper.Events.GameLoop.GameLaunched += (_, _) => Integrations.ConfigMenu.Register(this);
         helper.Events.GameLoop.SaveLoaded += OnSaveLoaded;
         helper.Events.GameLoop.ReturnedToTitle += OnReturnedToTitle;
         helper.Events.GameLoop.Saving += (_, _) => Store?.Flush(force: true);
@@ -67,6 +68,16 @@ public sealed class ModEntry : Mod
         var codex = CliLocator.Find("codex", Config.CodexPath);
         Monitor.Log($"Claude Code: {claude ?? "not found"}", claude == null ? LogLevel.Warn : LogLevel.Info);
         Monitor.Log($"Codex: {codex ?? "not found"}", codex == null ? LogLevel.Warn : LogLevel.Info);
+    }
+
+    /// <summary>Restores the default settings (Generic Mod Config Menu's "Reset" button).</summary>
+    public void ResetConfig() => Config = new ModConfig();
+
+    /// <summary>Saves config.json, then looks for the CLIs again in case their paths changed.</summary>
+    public void SaveConfig()
+    {
+        Helper.WriteConfig(Config);
+        Task.Run(DetectClis);
     }
 
     private void Shutdown()

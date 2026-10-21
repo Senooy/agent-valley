@@ -84,7 +84,17 @@ Every other command goes to **Claude Code**: `/compact`, `/context`, `/code-revi
 
 `!git status`, `!npm test`… runs the command in the agent's folder and streams its output into the chat. The shell is PowerShell on Windows (configurable: `pwsh` or `cmd`) and your `$SHELL` on macOS. Like Claude Code's `!` mode, the command and its output are attached to your next message to the agent.
 
-All keys can be changed in `Mods/AgentValley/config.json`, created on first launch.
+## ⚙️ Settings
+
+With **[Generic Mod Config Menu](https://www.nexusmods.com/stardewvalley/mods/5098)** installed, every setting is available in game from the title screen or the pause menu (*Mod Options*):
+
+- keys;
+- the default mode, folder and models of new agents;
+- the agent instructions;
+- sounds, desktop notifications and name tags;
+- CLI paths and the Windows shell used by `!` commands.
+
+Without it, edit `Mods/AgentValley/config.json`, created on first launch.
 
 ## 🧺 Installation
 
@@ -136,7 +146,7 @@ All in-game text lives in `AgentValley/i18n/`. `default.json` is English and `fr
 - [x] `!command` shell in the chat
 - [x] Agents side panel and docked remote chat
 - [x] English and French translations
-- [ ] Generic Mod Config Menu integration
+- [x] Generic Mod Config Menu integration
 - [ ] Screenshots and a Nexus release
 
 ## 📄 License

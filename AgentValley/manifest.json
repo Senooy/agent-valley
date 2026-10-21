@@ -6,5 +6,11 @@
   "UniqueID": "Younes.AgentValley",
   "EntryDll": "AgentValley.dll",
   "MinimumApiVersion": "4.0.0",
-  "UpdateKeys": [ "GitHub:Senooy/agent-valley" ]
+  "UpdateKeys": [ "GitHub:Senooy/agent-valley" ],
+  "Dependencies": [
+    {
+      "UniqueID": "spacechase0.GenericModConfigMenu",
+      "IsRequired": false
+    }
+  ]
 }
